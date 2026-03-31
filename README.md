@@ -4,11 +4,14 @@ Name: Naina Yadav
 Roll Number: 24BCE10400
 Software Selected: Git
 
- Project Overview
+
+Project Overview
 
 This project dives into the core ideas, licensing principles, and real-world usage of open-source software, taking Git as the primary example. Alongside the theoretical exploration, it also features five shell scripts that demonstrate practical Linux command-line skills.
 
- Scripts Description
+
+Scripts Description-
+
 Script 1 — System Identity Report
 
 Generates a summary of system information such as operating system details, kernel version, current user, system uptime, and license-related data.
@@ -29,7 +32,9 @@ Script 5 — Open Source Manifesto Generator
 
 Accepts user input to create a customized statement reflecting open-source philosophy.
 
-ow to Run Scripts
+
+How to Run Scripts-
+
 Launch the terminal in a Linux environment (WSL recommended)
 Move to the project directory:
 cd ~/oss-audit
@@ -43,9 +48,11 @@ Execute the scripts as needed:
 ./script3.sh  
 ./script4.sh /var/log/syslog  
 ./script5.sh  
-Requirements
+
+Requirements-
 Linux environment (WSL or Ubuntu)
 Basic understanding of shell commands
-Note
 
+
+Note-
 All scripts have been tested on Ubuntu via WSL and function as expected.

@@ -1,19 +1,48 @@
 #!/bin/bash
+# ==========================================================
 # Script 2: FOSS Package Inspector
+# Author: Naina Yadav
+# Course: Open Source Software
+# Description: Checks if a package is installed and displays info
+# ==========================================================
 
-PACKAGE="git"
+# -------- Input Package --------
+PACKAGE="git"   # Change if needed (git, firefox, vlc, etc.)
 
-if dpkg -l | grep -q $PACKAGE; then
-    echo "$PACKAGE is installed."
-    apt show $PACKAGE 2>/dev/null | grep -E 'Version|Maintainer|Description'
+# -------- Check Installation --------
+# Using dpkg (for Ubuntu/WSL)
+if dpkg -l | grep -qw "$PACKAGE"; then
+    echo "----------------------------------------"
+    echo "$PACKAGE is INSTALLED on this system."
+    echo "----------------------------------------"
+    
+    # Show version, architecture, and description
+    dpkg -s "$PACKAGE" | grep -E 'Version|Architecture|Description'
 else
+    echo "----------------------------------------"
     echo "$PACKAGE is NOT installed."
+    echo "----------------------------------------"
 fi
 
+# -------- Case Statement (Philosophy Notes) --------
+echo ""
+echo "Philosophy Note:"
 case $PACKAGE in
-    git) echo "Git: version control system built for open collaboration" ;;
-    firefox) echo "Firefox: open-source browser for a free web" ;;
-    vlc) echo "VLC: media player that supports everything" ;;
-    python) echo "Python: community-driven programming language" ;;
-    *) echo "Unknown package" ;;
+    git)
+        echo "Git: A distributed version control system built to support open and collaborative development."
+        ;;
+    firefox)
+        echo "Firefox: A browser developed to promote privacy, transparency, and an open web."
+        ;;
+    vlc)
+        echo "VLC: A free and open media player that supports almost all formats without restrictions."
+        ;;
+    mysql)
+        echo "MySQL: A powerful open-source database used in millions of applications worldwide."
+        ;;
+    *)
+        echo "This package represents the power of open-source software and community collaboration."
+        ;;
 esac
+
+echo "----------------------------------------"
